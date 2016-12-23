@@ -43,7 +43,8 @@
 	 */
 	function getMarkdownFromSlide( section ) {
 
-		var template = section.querySelector( 'script' );
+		//var template = section.querySelector( 'script' );
+		var template = section.querySelectorAll( '[data-template]' ).length ? section.querySelectorAll( '[data-template]' )[0] : null;
 
 		// strip leading whitespace so it isn't evaluated as code
 		var text = ( template || section ).textContent;
